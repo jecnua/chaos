@@ -19,11 +19,11 @@ command:
     stdout:
     - 'chaos, version 0.13.0'
     stderr: []
-    timeout: 10000
+    timeout: 10000 # Could be pretty slow
   LC_ALL=C.UTF-8 LANG=C.UTF-8 /usr/local/bin/chaos report --help:
     title: Checking chaos report
     exit-status: 0
     stdout:
     - 'Usage: chaos report'
     stderr: []
-    timeout: 10000
+    timeout: 15000 # Could be pretty slow

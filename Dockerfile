@@ -1,11 +1,13 @@
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 
-RUN apt-get update && \
+RUN export DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true && \
+  apt-get update && \
   apt-get install -y curl git
 
 # https://github.com/chaostoolkit/chaostoolkit
 # https://github.com/chaostoolkit/chaostoolkit-reporting
-RUN apt-get install -y python3 python3-pip texlive-latex-base texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra python3-tk pandoc libffi-dev libcairo2-dev && \
+RUN export DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true && \
+  apt-get install -y python3 python3-pip texlive-latex-base texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra python3-tk pandoc libffi-dev libcairo2-dev && \
   pip3 install --upgrade pip && \
   pip3 install chaostoolkit && \
   pip3 install chaostoolkit-reporting && \
