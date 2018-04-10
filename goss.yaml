@@ -1,0 +1,29 @@
+command:
+  /usr/local/go/bin/go version:
+    title: Checking go version
+    exit-status: 0
+    stdout:
+    - 'go version go1.10.1 linux/amd64'
+    stderr: []
+    timeout: 1000
+  '/root/go/bin/chaosmonkey --version':
+    title: Checking chaosmonkey version
+    exit-status: 0
+    stdout:
+    - '2.0.2'
+    stderr: []
+    timeout: 1000
+  LC_ALL=C.UTF-8 LANG=C.UTF-8 /usr/local/bin/chaos --version:
+    title: Checking chaos version
+    exit-status: 0
+    stdout:
+    - 'chaos, version 0.13.0'
+    stderr: []
+    timeout: 10000
+  LC_ALL=C.UTF-8 LANG=C.UTF-8 /usr/local/bin/chaos report --help:
+    title: Checking chaos report
+    exit-status: 0
+    stdout:
+    - 'Usage: chaos report'
+    stderr: []
+    timeout: 10000
