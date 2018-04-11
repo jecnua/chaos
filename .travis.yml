@@ -1,0 +1,19 @@
+sudo: required
+dist: trusty
+
+services:
+- docker
+
+language:
+- ruby
+
+# Note 1: Update but never upgrade
+before_install:
+- sudo apt-get update
+# - gem install travis --no-rdoc --no-ri
+- curl -L https://goss.rocks/install | sudo sh
+- make
+
+script:
+# - yes | travis lint
+- ./test_travis.sh

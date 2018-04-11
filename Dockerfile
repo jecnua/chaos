@@ -1,5 +1,7 @@
 FROM ubuntu:18.04
 
+MAINTAINER jecnua "fabrizio.sabatini.it@gmail.com"
+
 RUN export DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true && \
   apt-get update && \
   apt-get install -y curl git
@@ -28,3 +30,20 @@ RUN echo 'PATH="$PATH:/usr/local/go/bin"' >> /root/.bashrc && \
   echo 'PATH="$GOPATH/bin:$GOROOT/bin:$PATH"' >> /root/.bashrc && \
   echo 'export LC_ALL=C.UTF-8'  >> /root/.bashrc && \
   echo 'export LANG=C.UTF-8'  >> /root/.bashrc
+
+# Metadata params
+ARG BUILD_DATE
+ARG VERSION
+ARG VCS_URL
+ARG VCS_REF
+
+# Metadata
+LABEL org.label-schema.build-date=$BUILD_DATE \
+  org.label-schema.name="" \
+  org.label-schema.description="" \
+  org.label-schema.url="" \
+  org.label-schema.vcs-url=$VCS_URL \
+  org.label-schema.vcs-ref=$VCS_REF \
+  org.label-schema.version=$VERSION \
+  com.jecnua.docker.dockerfile="/Dockerfile" \
+  com.jecnua.license=""
