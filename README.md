@@ -4,6 +4,16 @@
 ![ubuntu-1804](https://img.shields.io/badge/ubuntu-18.04-green.svg)
 ![python-3](https://img.shields.io/badge/python-3-green.svg)
 
-## Tests
+## Build and run
 
-    dgoss run -it jecnua:chaos
+    $ make
+    $ docker run -it jecnua/docker-chaos:dev-latest
+
+## Test
+
+    $ ./test_travis.sh
+
+## TODO
+
+- Fix versions
+- Add Travis
