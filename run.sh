@@ -8,7 +8,7 @@ then
   exit 1
 fi
 
-if [ -z ${NAME_REPO+x} ];
+if [ -z "${NAME_REPO+x}" ];
 then
   echo "NAME_REPO is unset";
   NAME_REPO=$(basename "$(git rev-parse --show-toplevel)" | sed 's/-/\//g')
