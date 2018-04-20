@@ -1,5 +1,4 @@
 sudo: required
-dist: trusty
 
 services:
 - docker
@@ -16,4 +15,5 @@ before_install:
 
 script:
 # - yes | travis lint
+- shellcheck *.sh
 - ./test_travis.sh

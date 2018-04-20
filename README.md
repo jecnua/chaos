@@ -17,4 +17,3 @@
 ## TODO
 
 - Fix versions
-- Add Travis
