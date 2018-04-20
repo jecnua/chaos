@@ -2,14 +2,12 @@ FROM ubuntu:18.04
 
 MAINTAINER jecnua "fabrizio.sabatini.it@gmail.com"
 
-RUN export DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true && \
-  apt-get update && \
-  apt-get install -y curl git
-
 # https://github.com/chaostoolkit/chaostoolkit
 # https://github.com/chaostoolkit/chaostoolkit-reporting
 # https://github.com/pypa/pip/issues/5240
 RUN export DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true && \
+  apt-get update && \
+  apt-get install -y curl git htop && \
   apt-get install -y python3 python3-pip texlive-latex-base texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra python3-tk pandoc libffi-dev libcairo2-dev && \
   pip3 install --upgrade pip==9.0.3 && \
   pip3 install chaostoolkit && \
